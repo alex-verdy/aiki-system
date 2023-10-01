@@ -13,10 +13,7 @@ const Halls: FC<IHalls> = ({ halls }) => {
   let hallMap: ICity = halls.find((hall) => hall.city === city) || halls[0]
   const {asPath} = useRouter()
   let actCity: string = "Санкт-Петербург";
-  if (!asPath.includes("=")) {
-    actCity = "Санкт-Петербург";
-    hallMap = halls[0];
-  } else {
+  if (asPath.includes("=")) {
     halls.map((hall) =>
       asPath == `/#?city=${String(hall.id)}`
         ? ((actCity = hall.city), (hallMap = hall))
