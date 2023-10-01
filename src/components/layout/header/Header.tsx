@@ -27,8 +27,8 @@ const Header: FC = () => {
   useEffect(() => {
     const cityWasOpen = localStorage.getItem("cityWasOpen");
     if (!cityWasOpen) {
-      setToggleModal(true);
-      localStorage.setItem("cityWasOpen", "true");
+      setToggleModal(false);
+      localStorage.setItem("cityWasOpen", "false");
     }
   }, []);
 
@@ -89,6 +89,14 @@ const Header: FC = () => {
           <div className={styles.pc_tel} onClick={() => setToggleModal(true)}>
             <div>Ваш город: {city}</div>
           </div>
+        </div>
+
+        <div  className={styles.header_city}
+            onClick={() =>{
+            setOpen(false)
+            setToggleModal(true)}}
+            >
+              <div id='head_city'><p>Ваш город:</p> <span>{city}</span></div>
         </div>
 
         <div className={styles.mob}>
