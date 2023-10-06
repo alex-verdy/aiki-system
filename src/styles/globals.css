@@ -103,6 +103,7 @@ a {
 #modal-portal input, label{
   cursor: pointer;
   margin-top: 5px;
+  margin-left: 10px
 }
 
 #modal-portal .modal-form{
