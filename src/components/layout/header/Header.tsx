@@ -27,8 +27,8 @@ const Header: FC = () => {
   useEffect(() => {
     const cityWasOpen = localStorage.getItem("cityWasOpen");
     if (!cityWasOpen) {
-      setToggleModal(true);
-      localStorage.setItem("cityWasOpen", "true");
+      setToggleModal(false);
+      localStorage.setItem("cityWasOpen", "false");
     }
   }, []);
 
@@ -38,7 +38,7 @@ const Header: FC = () => {
     <>
       <header className={styles.header}>
         <Image src="/logo.svg" alt="aiki-system logo" width={90} height={90} />
-        <div className={styles.pc}>
+        <div className={ styles.pc}>
           <Link href="/" className={pathname === "/" ? styles.active : ""}>
             Главная
           </Link>
@@ -86,9 +86,17 @@ const Header: FC = () => {
                 /></a>
             </span>
           </div>
-          <div className={styles.pc_tel} onClick={() => setToggleModal(true)}>
-            <div>Ваш город: {city}</div>
+          <div className={pathname === "/" ? styles.city_wh : styles.city_bl} onClick={() => setToggleModal(true)}>
+            <div >Ваш город: <span style={{color: 'var(--blue)'}}>{city}</span></div>
           </div>
+        </div>
+
+        <div  className={pathname === "/" ? styles.header_city : styles.black_city}
+            onClick={() =>{
+            setOpen(false)
+            setToggleModal(true)}}
+            >
+              <div id='head_city'><p>Ваш город:</p> <span style={{color: 'var(--blue)'}}>{city}</span></div>
         </div>
 
         <div className={styles.mob}>
@@ -259,14 +267,7 @@ const Header: FC = () => {
             <form action="" className="modal-container">
               {cities.map((city, index) => (
                 <div key={index} className="modal-form">
-                  <input name="city" id={city} value={city} type="radio" />
-                  <label htmlFor={city}>{city}</label>
-                </div>
-              ))}
-              <button
-                type="submit"
-                className="button"
-                onClick={(e) => {
+                  <input name="city" id={city} value={city} type="radio" onClick={(e) => {
                   e.preventDefault();
                   const inputsHTML = document.getElementsByTagName("input");
                   const inputsObj = Array.from(inputsHTML);
@@ -277,10 +278,21 @@ const Header: FC = () => {
                   setCity && setCity(city);
                   localStorage.setItem('city', city)
                   setToggleModal(false);
-                }}
-              >
-                Сохранить
-              </button>
+                }}/>
+                  <label htmlFor={city} onClick={(e) => {
+                  e.preventDefault();
+                  const inputsHTML = document.getElementsByTagName("input");
+                  const inputsObj = Array.from(inputsHTML);
+                  const city = inputsObj.find(
+                    (input) => input.checked
+                  )?.defaultValue;
+                  if (!city) return;
+                  setCity && setCity(city);
+                  localStorage.setItem('city', city)
+                  setToggleModal(false);
+                }}>{city}</label>
+                </div>
+              ))}
             </form>
           </Modal.Body>
         </Modal>

@@ -6,7 +6,7 @@ const Old: FC = () => {
         <>
             <div className={styles.color}>
                 <div className={styles.first}>
-                    <p>Взрослая программа</p>
+                    <span>Взрослая программа с 15 лет</span>
                 </div>
                 <hr/>
                 <div className={styles.old_second}>

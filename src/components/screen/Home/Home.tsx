@@ -51,7 +51,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
 
     return (
         <>
-            <Layout title="Главная" description="smth">
+            <Layout title="Главная" description="Клуб боевых искусств">
                 <article className={styles.first}>
                     <div className={styles.box}>
                         <div className={styles.title}>
@@ -107,7 +107,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                 <article className={styles.history}>
                     <div>
                         <h2>ИСТОРИЯ <span>КЛУБА</span></h2>
-                        <Link href='/about_us'>Посмотреть историю нашего клуба</Link>
+                        <Link href='/about_us/#history'>Посмотреть историю нашего клуба</Link>
                     </div>
                 </article>
                 <article className={styles.master}>

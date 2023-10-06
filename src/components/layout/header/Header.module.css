@@ -29,8 +29,8 @@
     cursor: default;
 }
 
-.tel_wh {
-    color: white;
+.tel_wh, .city_wh{
+    color: white !important;
     position: relative;
     top: -8.3px;
     margin: 5px 5px !important;
@@ -42,12 +42,17 @@
     margin: 5px 5px;
 }
 
+.city_bl{
+    padding-left: 30px;
+}
+
 .tel_bl {
     color: black;
     position: relative;
     top: -8.3px;
     padding: 5px 5px;
     cursor: pointer;
+    
 }
 
 .icon {
@@ -118,6 +123,7 @@
 .mob_menu .tel_bl,
 .tel_wh {
     color: white;
+    
 }
 
 .mob_menu .burger {
@@ -153,6 +159,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
 
 @keyframes menu {
     0% {
@@ -208,6 +215,10 @@
     color: var(--blue);
 }
 
+.black_city{
+    display: none;
+}
+
 @media(max-width: 1100px) {
     .pc {
         display: none;
@@ -225,7 +236,7 @@
         display: none;
     }
 
-    .header_city{
+    .header_city, .black_city{
         display: block;
     }
 }
@@ -240,7 +251,7 @@
         box-shadow: 1px 1px 100px 1px rgba(128, 128, 128, 0.705);
 
     }
-    .header_city div span{
+    .header_city, .black_city div span{
         color: var(--blue);
     }
 }
