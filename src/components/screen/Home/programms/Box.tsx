@@ -6,6 +6,7 @@ import styles from './Programms.module.css'
 import { useSidebarContext, SidebarContext } from "@/components/layout/sideBarCtx";
 import { Service } from "@/service/car.service"
 import { IContact } from "@/interfaces/contacts.interface";
+//@ts-ignore
 import { Modal } from "next-modal";
 
 const Box: FC<IProgSingle> = ({ prog }) => {
