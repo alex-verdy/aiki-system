@@ -5,7 +5,7 @@ const Orange: FC = () => {
     return(
         <div className={styles.color}>
             <div className={styles.first}>
-                <p><span>Ораньжевый пояс </span>| 7-кю</p>
+                <p><span>Оранжевый пояс </span>| 7-кю</p>
                 <p><span>Возраст: </span>10-12 лет</p>
                 <p><span>Кол-во тренировок: </span>72</p>
             </div>
@@ -48,7 +48,7 @@ const Orange: FC = () => {
                 <div className={styles.th_block}>
                     <span>Тестирование</span>
                     <ul>
-                        <li>Раздел OTOSHI в свободной форме в течение минуты, не менее двадцати бросков</li>
+                        <li>Опрокидывание набок за руку от бокового удара (диагональ 2) в течение одной минуты, не меньше двенадцати раз.</li>
                     </ul>
                 </div>
             </div>

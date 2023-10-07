@@ -17,8 +17,12 @@
     margin-top: 150px;
 }
 
+.box h2:nth-child(n + 2){
+    margin-top: 50px;
+}
+
 .paragraph {
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
 .paragraph p {
@@ -28,6 +32,17 @@
     line-height: 28px;
     letter-spacing: 0em;
     text-align: left;
+}
+
+.box ul{
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.iconLink{
+    margin-left: 10px;
+    position: relative;
+    top: 7px;
 }
 
 @media(max-width: 600px) {

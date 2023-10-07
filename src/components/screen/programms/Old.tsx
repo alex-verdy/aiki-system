@@ -6,7 +6,7 @@ const Old: FC = () => {
         <>
             <div className={styles.color}>
                 <div className={styles.first}>
-                    <p>Взрослая программа</p>
+                    <span>Взрослая программа с 15 лет</span>
                 </div>
                 <hr/>
                 <div className={styles.old_second}>
@@ -17,25 +17,25 @@ const Old: FC = () => {
                         </ul>
                     </div>
                     <div className={styles.block}>
-                        <span>4-кю желтый пояс </span>
+                        <span>4-кю красный пояс  </span>
                         <ul>
                             <li>Otoshi waza</li>
                         </ul>
                     </div>
                     <div className={styles.block}>
-                        <span>3-кю желтый пояс </span>
+                        <span>3-кю зеленый пояс </span>
                         <ul>
                             <li>Kansetsu waza</li>
                         </ul>
                     </div>
                     <div className={styles.block}>
-                        <span>2-кю желтый пояс </span>
+                        <span>2-кю  синий пояс </span>
                         <ul>
                             <li>Nage waza</li>
                         </ul>
                     </div>
                     <div className={styles.block}>
-                        <span>1-кю желтый пояс </span>
+                        <span>1-кю коричневый пояс </span>
                         <ul>
                             <li>Osae waza</li>
                         </ul>

@@ -114,8 +114,11 @@
     animation: toDownA .8s ease-in-out;
 }
 
-.det_cont a span {
-    animation: toDownS .7s ease;
+.det_cont:nth-child(1) a span {
+    animation: toDownS .7s ease-in-out;
+}
+.det_cont:nth-child(2) a span {
+    animation: toDownS .9s ease-in-out;
 }
 
 @keyframes toLeft {
@@ -142,16 +145,22 @@
 
 @keyframes toDownA {
     0% {
+        transform: translateY(-10px);
         opacity: 0;
         height: 10px;
     }
 
     20% {
+        transform: translateY(-20);
         opacity: .01;
     }
 
+    70%{
+        transform: translateY(18px);
+    }
     100% {
-        height: 80px;
+        transform: translateY(0);
+        height: 90px;
     }
 }
 

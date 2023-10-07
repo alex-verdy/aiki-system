@@ -18,8 +18,21 @@ const Footer: FC = () => {
                     <li>Ученики</li>
                     <li>О нас</li>
                 </ul>
+                <a className={styles.iconLink} href={`https://t.me/aikido_rus`}><Image
+                                width={30}
+                                height={30}
+                                src={"/tg.svg"}
+                                alt="telegram logo"
+                            /></a>
+                            <a className={styles.iconLink} href={`https://vk.com/aikido_russia`}>
+                                <Image
+                                    width={30}
+                                    height={30}
+                                    src={"/wu.svg"}
+                                    alt="what`s up logo"
+                                /></a>
             </div>
-            <span>S.ink studio &copy; 2022</span>
+             <span>S.ink studio &copy; 2022</span>
         </footer>
     )
 }

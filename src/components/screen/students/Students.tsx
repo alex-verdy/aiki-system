@@ -43,7 +43,7 @@ const Students: FC<IStudentData> = ({ students }) => {
     const debouncedChange = debounce(handleChange, 500);
 
     return (
-        <Layout title="Ученики" description="Ученики клуба">
+        <Layout title="Ученики" description="Список учеников">
             <div className={styles.box}>
                 <h2>Ученики</h2>
                 <label className={styles.label}>

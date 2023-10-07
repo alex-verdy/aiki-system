@@ -19,7 +19,7 @@ const Programms: FC = () => {
     }
 
     return (
-        <Layout title="История клуба" description="История клуба">
+        <Layout title="Программы" description="Экзамены айкидо">
             <article className={styles.box}>
                 <h2>Аттестационные требования</h2>
                 <div className={styles.belt}>
