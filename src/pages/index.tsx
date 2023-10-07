@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<IData> = async () => {
 
     return {
         props: { progs, masters, halls, students },
-        revalidate: 3600,
+        revalidate: 86400,
     }
 }
 
