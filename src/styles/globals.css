@@ -175,31 +175,36 @@ a {
 @font-face {
   font-family: Inter;
   src: url(/Inter-Light.ttf);
-  weight: 300
+  weight: 300;
+  font-display: swap;
 }
 
 @font-face {
   font-family: Inter-r;
   src: url(/Inter-Regular.ttf);
-  weight: 300
+  weight: 300;
+  font-display: swap;
 }
 
 @font-face {
   font-family: InterMedium;
   src: url(/Inter-Medium.ttf);
-  weight: 300
+  weight: 300;
+  font-display: swap;
 }
 
 @font-face {
   font-family: InterSemiBold;
   src: url(/Inter-SemiBold.ttf);
-  weight: 300
+  weight: 300;
+  font-display: swap;
 }
 
 @font-face {
   font-family: Apex;
   src: url(/apex-b.ttf);
-  weight: 500
+  weight: 500;
+  font-display: swap;
 }
 
 #head_city p, #head_city span{
