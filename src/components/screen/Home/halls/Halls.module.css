@@ -5,7 +5,7 @@
     flex-direction: row;
     margin: 50px;
     height: 73px;
-    margin-bottom: 20px;
+    margin-bottom: -15px;
 }
 
 .city summary {
@@ -22,6 +22,9 @@
     align-items: flex-start;
     height: 0;
     transition: all .5s ease-in-out;
+}
+.city[open]{
+    margin-bottom: 10px;
 }
 
 .city[open] div {
@@ -93,3 +96,20 @@
     word-wrap: normal;
 }
 
+@media(max-width: 600px) {
+    .city div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 0;
+        transition: all .5s ease-in-out;
+        
+    }
+    .city[open] a {
+        height: auto;
+        padding: 5px;
+    }
+    .city[open]{
+        margin-bottom: 100px;
+    }
+}
