@@ -267,7 +267,7 @@ const Header: FC = () => {
             <form action="" className="modal-container">
               {cities.map((city, index) => (
                 <div key={index} className="modal-form">
-                  <input name="city" id={city} value={city} type="radio" onClick={(e) => {
+                  <input name="city" id={city} value={city} type="radio" onChange={(e) => {
                   e.preventDefault();
                   const inputsHTML = document.getElementsByTagName("input");
                   const inputsObj = Array.from(inputsHTML);
@@ -279,18 +279,7 @@ const Header: FC = () => {
                   localStorage.setItem('city', city)
                   setToggleModal(false);
                 }}/>
-                  <label htmlFor={city} onClick={(e) => {
-                  e.preventDefault();
-                  const inputsHTML = document.getElementsByTagName("input");
-                  const inputsObj = Array.from(inputsHTML);
-                  const city = inputsObj.find(
-                    (input) => input.checked
-                  )?.defaultValue;
-                  if (!city) return;
-                  setCity && setCity(city);
-                  localStorage.setItem('city', city)
-                  setToggleModal(false);
-                }}>{city}</label>
+                  <label htmlFor={city} >{city}</label>
                 </div>
               ))}
             </form>
