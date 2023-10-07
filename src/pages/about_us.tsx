@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<IHistory> = async () => {
 
     return {
         props: { history },
-        revalidate: 3600,
+        revalidate: 86400,
     }
 }
 
