@@ -27,7 +27,7 @@ const Footer: FC = () => {
                     </Link>
                     <Link href="/about_us">
                         <li>О нас</li>
-                    <Link>
+                    </Link>
                 </ul>
                 <a className={styles.iconLink} href={`https://t.me/aikido_rus`}><Image
                                 width={30}
