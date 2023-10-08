@@ -18,6 +18,7 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({ title, description, children }) =>
                 ) : (
                     <meta name="robots" content="noindex, nofollow" />
                 )}
+                <meta name="yandex-verification" content="b4992a505c5a5dcc" />
             </Head>
             {children}
         </>
