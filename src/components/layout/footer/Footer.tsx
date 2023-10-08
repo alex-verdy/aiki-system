@@ -12,11 +12,21 @@ const Footer: FC = () => {
                     height={90}
                     alt='Логотип айки-систем' />
                 <ul>
-                    <li>Главная</li>
-                    <li>Программы</li>
-                    <li>Наши залы</li>
-                    <li>Ученики</li>
-                    <li>О нас</li>
+                    <Link href="/" >
+                        <li>Главная</li>
+                    </Link>
+                    <Link href="/programms">
+                        <li>Программы</li>
+                    </Link>
+                    <Link href="/#halls">
+                        <li>Наши залы</li>
+                    </Link>
+                    <Link href="/students">
+                        <li>Ученики</li>
+                    </Link>
+                    <Link href="/about_us">
+                        <li>О нас</li>
+                    <Link>
                 </ul>
                 <a className={styles.iconLink} href={`https://t.me/aikido_rus`}><Image
                                 width={30}
