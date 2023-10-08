@@ -8,6 +8,7 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({ title, description, children }) =>
     return (
         <>
             <Head>
+                <meta name="yandex-verification" content="b4992a505c5a5dcc" />
                 <title>{getTitle(title)}</title>
                 {description ? (
                     <>
@@ -15,10 +16,7 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({ title, description, children }) =>
                         <meta name="og:title" content={getTitle(title)} />
                         <meta name="og:description" content={description} />
                     </>
-                ) : (
-                    <meta name="robots" content="noindex, nofollow" />
-                )}
-                <meta name="yandex-verification" content="b4992a505c5a5dcc" />
+                ) : ('')}
             </Head>
             {children}
         </>
