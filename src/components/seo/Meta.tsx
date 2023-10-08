@@ -10,6 +10,7 @@ const Meta: FC<PropsWithChildren<IMeta>> = ({ title, description, children }) =>
             <Head>
                 <title>{getTitle(title)}</title>
                 <meta name="yandex-verification" content="b4992a505c5a5dcc" />
+                <meta name="google-site-verification" content="ag7-C_VaghBxIO2yuk_42zKMhmMbJZYaIkGixU_UYPs" />
                 {description ? (
                     <>
                         <meta name="description" content={description} />
