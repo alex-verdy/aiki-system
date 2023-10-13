@@ -39,8 +39,8 @@ const Footer: FC = () => {
                                 <Image
                                     width={30}
                                     height={30}
-                                    src={"/wu.svg"}
-                                    alt="what`s up logo"
+                                    src={"/vk.svg"}
+                                    alt="vk logo"
                                 /></a>
             </div>
              <span>S.ink studio &copy; 2022</span>
