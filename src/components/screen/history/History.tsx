@@ -8,7 +8,7 @@ import Image from "next/image";
 const History: FC<IHistory> = ({ history }) => {
 
     return (
-        <Layout title="О Нас" description="История клуба айкидо">
+        <Layout title="О Нас" description="АйКиСистем - синтез различных видов боевых искусств и их направления. Реальное айкидо, Томики и другие стили были проанализированы для создания современной системы единоборств с восточными корнями.">
             <article className={styles.box}>
                 <h2 id="history">ИСТОРИЯ КЛУБА</h2>
                 {history.length ? history.map(
