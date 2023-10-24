@@ -43,7 +43,7 @@ const Students: FC<IStudentData> = ({ students }) => {
     const debouncedChange = debounce(handleChange, 500);
 
     return (
-        <Layout title="Ученики" description="Список учеников">
+        <Layout title="Ученики" description="Ученики АйКиСистем являются призерами соревнований разного уровня и масштаба. Мы готовим реальных мастеров по айкидо. Ищите нас в городе Санкт-Петербурге, Перми, Ижевске и Каменке.">
             <div className={styles.box}>
                 <h2>Ученики</h2>
                 <label className={styles.label}>
