@@ -19,7 +19,7 @@ const Programms: FC = () => {
     }
 
     return (
-        <Layout title="Программы" description="Экзамены айкидо">
+        <Layout title="Программы" description="Экзаменационная программа АйКиСистем включает комплексную проверку ученика в таких направлениях, как: страховка, ОФП, техническая и теоретическая подготовка.">
             <article className={styles.box}>
                 <h2>Аттестационные требования</h2>
                 <div className={styles.belt}>
