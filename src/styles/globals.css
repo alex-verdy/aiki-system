@@ -165,9 +165,9 @@ a {
   }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 550px) {
    #city1 {
-    right: 872px;
+    right: 1000px;
     position: relative;
   }
 }
