@@ -73,7 +73,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                     </div>
                     <Image
                         priority
-                        src='/back.jpg'
+                        src='/main-img.jpg'
                         width={955}
                         height={794}
                         alt='Бросок коше наге'
