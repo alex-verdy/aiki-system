@@ -11,12 +11,21 @@ const History: FC<IHistory> = ({ history }) => {
         <Layout title="О Нас" description="АйКиСистем - синтез различных видов боевых искусств и их направления. Реальное айкидо, Томики и другие стили были проанализированы для создания современной системы единоборств с восточными корнями.">
             <article className={styles.box}>
                 <h2 id="history">ИСТОРИЯ КЛУБА</h2>
+                <div className={styles.cont}>
+                     <Image 
+                    src='/team.jpg'
+                    alt="aiki-system team"
+                    width={511}
+                    height={340}
+                    className={styles.img}/>
                 {history.length ? history.map(
                     (histor,index) =>
                         <Paragraph history={histor} key={index} />
                 ) :
                     <div>Not found</div>
                 }
+                </div>
+               
                 <h2>сотрудничество</h2>
                 <div className={styles.paragraph}>
                     <p> За время существования клуба, у нас сформировалась четкая методическая  система обучения.

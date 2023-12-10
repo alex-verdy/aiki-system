@@ -45,9 +45,28 @@
     top: 7px;
 }
 
+.cont .img{
+    float: right;
+    margin-right: 20px;
+}
+
+@media(max-width: 1200px){
+    .cont{
+        display: flex;
+        flex-direction: column;
+    }
+    .img{
+        margin-left: 70px;
+        margin-bottom: 50px;
+    }
+}
 @media(max-width: 600px) {
-    .box h2{
+    .box h2, .img{
         margin-left: 20px;
+    }
+    .img{
+        width: calc(100vw - 40px);
+        height: auto;
     }
     .paragraph {
         margin: 0 10px 0 20px;
