@@ -43,7 +43,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
     const getWhite = (size: number) => {
         let i:number
         let pos: string = 'def'
-        let stspace = (max - 440)/2
+        let stspace = (max - 513)/2
         if(max < size + 537){
             i = max - 537
         }else{
