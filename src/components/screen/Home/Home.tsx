@@ -21,18 +21,107 @@ import { IContact } from "@/interfaces/contacts.interface";
 const Home: FC<IData> = ({ progs, masters, halls }) => {
     const [max, setMax] = useState(0);
     const [toggleModal, setToggleModal] = useState(false);
+    const [ imgSize, setImgSize] = useState(0)
     const { city } = useContext(SidebarContext);
     const contacts = useMemo(() => Service.getContacts(), []);
     const currentContact = contacts.filter((v: IContact) => v.city.includes(city || ''))[0].phone;
     const currentContactRaw = currentContact.replace(/\(|\)|-/g, '');
-
+    const [right, setRight] = useState(0)
     useEffect(() => {
-
         setMax(window.innerWidth)
-
     }, [])
 
+    
+    useEffect(() => {
+        if(max > 1100){
+             getWhite(imgSize)
+        }
+    }, [imgSize])
     const [count, setCount] = useState(0)
+    const [coun, setCoun] = useState(0)
+
+    const getWhite = (size: number) => {
+        let i:number
+        let pos: string = 'def'
+        let stspace = (max - 440)/2
+        if(max < size + 537){
+            i = max - 537
+        }else{
+            i = size
+        }
+        if(stspace + 462 < i){
+            setCoun(5)
+            console.log(5)
+            pos = "out"
+           console.log('rjkvo =', count, i, right, max)
+            return
+        }
+        
+        if(stspace + 311 < i){
+            setCoun(4)
+            console.log(4)
+            if(stspace + 311 + 60 > i ){
+                pos = "out"
+            }else{
+                let wWord = 91.5/2
+                if(stspace + wWord - i > wWord){
+                    setRight(stspace + 311 + 60 + wWord + 5 - i)
+                }else{
+                    setRight(-(stspace + 311 + 60 + wWord + 5 - i))
+                }
+            }
+            console.log('rjkvo =', count, i, right, max)
+            return
+        }
+        if(stspace + 165.5 < i){
+            setCoun(3)
+            console.log(3)
+            if(stspace + 60 + 165.5 > i ){
+                pos = "out"
+            }else{
+                let wWord = 85.5/2
+                if(stspace + wWord - i > wWord/2){
+                    setRight(stspace + 60 + 165.5 + wWord + 5 - i)
+                }else{
+                    setRight(-(stspace + 60 + 165.5 + wWord + 5 - i))
+                }
+            }
+           console.log('rjkvo =', count, i, right, max)
+            return
+        }
+        if(stspace + 42 < i){
+            setCoun(2)
+            console.log(2)
+            if(stspace + 60 + 42 > i ){
+                pos = "out"
+            }else{
+                let wWord = 63.5/2
+                if(stspace + wWord - i > wWord/2){
+                    setRight(stspace + 60 + 42 + wWord + 5 - i)
+                }else{
+                    setRight(-(stspace + 60 + 42 + wWord + 5 - i))
+                }
+            }
+           console.log('rjkvo =', count, i, right, max)
+            return
+        }
+        if(stspace < i ){
+            setCoun(1)
+            console.log(1)
+            if(stspace + 42 > i ){
+                let wWord = 52/2
+                if(stspace + wWord - i > wWord/2){
+                    setRight(stspace + 42 + wWord + 5 - i)
+                }else{
+                    setRight(-(stspace + 42 + wWord + 5 - i))
+                }
+            }else{
+                pos= "out"
+            }
+           console.log('rjkvo =', count, i, right, max)
+            return
+        }       
+    }
 
     const getNext = (number: number) => {
         if (count + number == masters.length) {
@@ -51,7 +140,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
 
     return (
         <>
-            <Layout title="Главная" description="АйКиСистем - клуб единоборств, с новым подходом к восточным боевым искусствам. Наши воспитанники получают необходимую базу по таким направлениям, как: айкидо, карате и джиу-джитсу. Такой подход помогает совмещать спортивные и прикладные направления. Мы находимся в Санкт-Петербурге, Перми, Ижевске и Каменке.">
+            <Layout title="Главная" right={right} count={coun} description="АйКиСистем - клуб единоборств, с новым подходом к восточным боевым искусствам. Наши воспитанники получают необходимую базу по таким направлениям, как: айкидо, карате и джиу-джитсу. Такой подход помогает совмещать спортивные и прикладные направления. Мы находимся в Санкт-Петербурге, Перми, Ижевске и Каменке.">
                 <article className={styles.first}>
                     <div className={styles.box}>
                         <div className={styles.title}>
@@ -77,7 +166,9 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                         width={955}
                         height={794}
                         alt='Бросок коше наге'
-                        className={styles.back} />
+                        className={styles.back} 
+                        onLoad={(e) => setImgSize((e.target as HTMLImageElement).width)} /> 
+                        
                 </article>
                 <article className={styles.programms}>
                     <h2>Дисциплины</h2>
