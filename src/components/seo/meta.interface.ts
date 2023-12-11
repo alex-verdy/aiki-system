@@ -2,6 +2,8 @@ export interface IMeta{
     title: string
     description?: string
     header?: ICity[]
+    right?: number
+    count?: number
 }
 
 export interface ICity{
@@ -11,4 +13,9 @@ export interface ICity{
     tel: string
     tg: string
     wu: string
+}
+
+export interface IHeader{
+    right?: number
+    count?: number
 }
