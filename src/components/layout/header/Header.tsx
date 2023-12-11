@@ -8,10 +8,11 @@ import { Modal } from "next-modal";
 import { useSidebarContext } from "../sideBarCtx";
 import { Service } from "@/service/car.service"
 import { IContact } from "@/interfaces/contacts.interface";
+import { IHeader } from "@/components/seo/meta.interface";
 
 
 
-const Header: FC = () => {
+const Header: FC<IHeader> = ({right, count}) => {
   const [open, setOpen] = useState(false);
   let { setCity, city } = useSidebarContext()
   const contacts = useMemo(() => Service.getContacts(), []);
@@ -33,36 +34,40 @@ const Header: FC = () => {
   }, []);
 
   const { pathname } = useRouter();
-
+  console.log(right, count)
   return (
     <>
       <header className={styles.header}>
         <Image src="/logo.svg" alt="aiki-system logo" width={90} height={90} />
-        <div className={ styles.pc}>
+        <div className={ styles.pc} style={{marginLeft: `${right}px`}}>
           <Link href="/" className={pathname === "/" ? styles.active : ""}>
             Главная
           </Link>
           <Link
             href="/programms"
             className={pathname === "/programms" ? styles.active : ""}
+            id={Number(count) > 4 ? styles.wh : ''}
           >
             Программы
           </Link>
           <Link
             href="/#halls"
             className={pathname === "/about" ? styles.active : ""}
+            id={Number(count) > 3 ? styles.wh : ''}
           >
             Наши залы
           </Link>
           <Link
             href="/students"
             className={pathname === "/students" ? styles.active : ""}
+            id={Number(count) > 2 ? styles.wh : ''}
           >
             Ученики
           </Link>
           <Link
             href="/about_us"
             className={pathname === "/about_us" ? styles.active : ""}
+            id={Number(count) > 1 ? styles.wh : ''}
           >
             О нас
           </Link>
