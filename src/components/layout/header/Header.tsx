@@ -39,7 +39,7 @@ const Header: FC<IHeader> = ({right, count}) => {
     <>
       <header className={styles.header}>
         <Image src="/logo.svg" alt="aiki-system logo" width={90} height={90} />
-        <div className={ styles.pc} style={{marginLeft: `${right}px`}}>
+        <div className={ styles.pc} style={{marginRight: `${right}px`}}>
           <Link href="/" className={pathname === "/" ? styles.active : ""}>
             Главная
           </Link>
