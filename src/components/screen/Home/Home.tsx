@@ -63,7 +63,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
         }else{
             i = size
         }if(stspace + 30 > i){
-            setCount(0)
+            setCoun(0)
             setRight(0)
             return
         }if(stspace + width[0] > i){
@@ -85,7 +85,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
             getDat(3)
             return
         }
-        setCount(4)
+        setCoun(4)
     }
     const getNext = (number: number) => {
         if (count + number == masters.length) {
