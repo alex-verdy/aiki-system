@@ -46,28 +46,28 @@ const Header: FC<IHeader> = ({right, count}) => {
           <Link
             href="/programms"
             className={pathname === "/programms" ? styles.active : ""}
-            id={Number(count) > 4 ? styles.wh : ''}
+            id={Number(count) > 3 ? styles.wh : ''}
           >
             Программы
           </Link>
           <Link
             href="/#halls"
             className={pathname === "/about" ? styles.active : ""}
-            id={Number(count) > 3 ? styles.wh : ''}
+            id={Number(count) > 2 ? styles.wh : ''}
           >
             Наши залы
           </Link>
           <Link
             href="/students"
             className={pathname === "/students" ? styles.active : ""}
-            id={Number(count) > 2 ? styles.wh : ''}
+            id={Number(count) > 1 ? styles.wh : ''}
           >
             Ученики
           </Link>
           <Link
             href="/about_us"
             className={pathname === "/about_us" ? styles.active : ""}
-            id={Number(count) > 1 ? styles.wh : ''}
+            id={Number(count) > 0 ? styles.wh : ''}
           >
             О нас
           </Link>
