@@ -43,86 +43,49 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
     const getWhite = (size: number) => {
         let i:number
         let pos: string = 'def'
-        let stspace = (max - 513)/2
-        if(max < size + 537){
-            i = max - 537
+        let stspace = (max - 1073.7)/2 + 286
+        let word = [43.7, 63.6, 85.4, 91.5]
+        let width = [73.7, 197.3, 342.7, 494.2]
+        const getDat = (j:number) =>{
+            setCoun(j)
+            if(stspace + width[j] - word[j] < i){
+                console.log('in')
+                if(i - stspace - width[j] + word[j] < word[j]/2){
+                    setRight(stspace + width[j] - i + 20)
+                }else{
+                    setRight(-(i - stspace - width[j] + word[j] + 15))
+                    setCoun(j+1)
+                }
+            }
+        }     
+        if(max < size + 536){
+            i = max- 537
         }else{
             i = size
-        }
-        if(stspace + 462 < i){
-            setCoun(5)
-            console.log(5)
-            pos = "out"
-           console.log('rjkvo =', count, i, right, max)
+        }if(stspace + 30 > i){
+            setCount(0)
+            setRight(0)
             return
-        }
-        
-        if(stspace + 311 < i){
-            setCoun(4)
-            console.log(4)
-            if(stspace + 311 + 60 > i ){
-                pos = "out"
-            }else{
-                let wWord = 91.5/2
-                if(stspace + wWord - i > wWord){
-                    setRight(stspace + 311 + 60 + wWord + 5 - i)
-                }else{
-                    setRight(-(stspace + 311 + 60 + wWord + 5 - i))
-                }
-            }
-            console.log('rjkvo =', count, i, right, max)
+        }if(stspace + width[0] > i){
+            getDat(0)
+           console.log('rjkvo =', count, i, right, max, size)
             return
-        }
-        if(stspace + 165.5 < i){
-            setCoun(3)
+        } if(stspace + width[1]  > i){
             console.log(3)
-            if(stspace + 60 + 165.5 > i ){
-                pos = "out"
-            }else{
-                let wWord = 85.5/2
-                if(stspace + wWord - i > wWord/2){
-                    setRight(stspace + 60 + 165.5 + wWord + 5 - i)
-                }else{
-                    setRight(-(stspace + 60 + 165.5 + wWord + 5 - i))
-                }
-            }
-           console.log('rjkvo =', count, i, right, max)
+            getDat(1)
+           console.log('rjkvo =', count, i, right, max, size)
+            return
+        }if(stspace + width[2] > i){
+            console.log(4)
+            getDat(2)
+            console.log('rjkvo =', count, i, right, max, size)
+            return
+        }if(stspace + width[3]  > i){
+            console.log(5)
+            getDat(3)
             return
         }
-        if(stspace + 42 < i){
-            setCoun(2)
-            console.log(2)
-            if(stspace + 60 + 42 > i ){
-                pos = "out"
-            }else{
-                let wWord = 63.5/2
-                if(stspace + wWord - i > wWord/2){
-                    setRight(stspace + 60 + 42 + wWord + 5 - i)
-                }else{
-                    setRight(-(stspace + 60 + 42 + wWord + 5 - i))
-                }
-            }
-           console.log('rjkvo =', count, i, right, max)
-            return
-        }
-        if(stspace < i ){
-            setCoun(1)
-            console.log(1)
-            if(stspace + 42 > i ){
-                let wWord = 52/2
-                if(stspace + wWord - i > wWord/2){
-                    setRight(stspace + 42 + wWord + 5 - i)
-                }else{
-                    setRight(-(stspace + 42 + wWord + 5 - i))
-                }
-            }else{
-                pos= "out"
-            }
-           console.log('rjkvo =', count, i, right, max)
-            return
-        }       
     }
-
     const getNext = (number: number) => {
         if (count + number == masters.length) {
             setCount(count - masters.length + number)
