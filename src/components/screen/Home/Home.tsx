@@ -85,6 +85,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
             getDat(3)
             return
         }
+        setCount(4)
     }
     const getNext = (number: number) => {
         if (count + number == masters.length) {
