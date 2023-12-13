@@ -58,8 +58,8 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                 }
             }
         }     
-        if(max < size + 536){
-            i = max- 537
+        if(max < size + 587){
+            i = max- 587
         }else{
             i = size
         }if(stspace + 30 > i){
