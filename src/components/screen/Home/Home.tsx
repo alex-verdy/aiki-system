@@ -40,7 +40,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
     const [count, setCount] = useState(0)
     const [coun, setCoun] = useState(0)
 
-    const getWhite = (size: number) => {
+    /*const getWhite = (size: number) => {
         let i:number
         let pos: string = 'def'
         let stspace = (max - 1073.7)/2 + 286
@@ -86,7 +86,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
             return
         }
         setCoun(4)
-    }
+    }*/
     const getNext = (number: number) => {
         if (count + number == masters.length) {
             setCount(count - masters.length + number)
