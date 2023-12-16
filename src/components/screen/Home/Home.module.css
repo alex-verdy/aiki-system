@@ -21,6 +21,11 @@
     margin-top: 50px;
 }
 
+.back{
+    margin-left: -350px;
+    z-index: -1;
+}
+
 .title {
     width: 537px;
     height: auto;
@@ -250,6 +255,7 @@
         width: 100%;
         z-index: -1;
         object-fit: cover;
+        margin-left: 0
     }
 
     .first {
