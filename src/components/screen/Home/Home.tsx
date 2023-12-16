@@ -32,11 +32,11 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
     }, [])
 
     
-    useEffect(() => {
+    /*useEffect(() => {
         if(max > 1100){
              getWhite(imgSize)
         }
-    }, [imgSize])
+    }, [imgSize])*/
     const [count, setCount] = useState(0)
     const [coun, setCoun] = useState(0)
 
