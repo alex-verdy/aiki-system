@@ -152,14 +152,14 @@ a {
 }
 
 @media(max-width: 940px) {
-  #city0, #city1, #city2, #city3 {
+   #city1, #city2, #city3 {
     right: 800px;
     position: relative;
   }
 }
 
 @media(max-width: 640px) {
-  #city0, #city1, #city2, #city3 {
+  #city1, #city2, #city3 {
     right: 852px;
     position: relative;
   }
@@ -169,6 +169,9 @@ a {
    #city1 {
     right: 1000px;
     position: relative;
+  }
+  #city0{
+    right: 650px;
   }
 }
 
