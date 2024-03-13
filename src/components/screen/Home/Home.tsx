@@ -1,28 +1,28 @@
-import styles from "./Home.module.css";
-import { FC, useState, useEffect, useMemo, useContext } from 'react'
+import {FC, useState, useEffect, useMemo, useContext} from 'react'
+import Image from "next/image";
+import Link from "next/link";
+//@ts-ignore
+import {Modal} from "next-modal";
+import {IData} from "@/interfaces/data.interfaces";
+import {IContact} from "@/interfaces/contacts.interface";
+import {SidebarContext} from "@/components/layout/sideBarCtx";
 import Layout from "@/components/layout/Layout";
 import Subtract from './subtract/Subtract';
-import Image from "next/image";
-import { IData } from "@/interfaces/data.interfaces";
 import Programms from "./programms/Programms";
 import ProgrammsMob from "./programms/ProgrammsMob";
 import Box from "./programms/Box";
 import Card from "./masters/Master-card";
 import Halls from "./halls/Halls";
-import Link from "next/link";
 import Back from "./Arrow/Back";
 import Next from "./Arrow/Next";
-//@ts-ignore
-import { Modal } from "next-modal";
-import { useSidebarContext, SidebarContext } from "@/components/layout/sideBarCtx";
-import { Service } from "@/service/car.service"
-import { IContact } from "@/interfaces/contacts.interface";
+import {Service} from "@/service/car.service"
+import styles from "./Home.module.css";
 
-const Home: FC<IData> = ({ progs, masters, halls }) => {
+const Home: FC<IData> = ({progs, masters, halls}) => {
     const [max, setMax] = useState(0);
     const [toggleModal, setToggleModal] = useState(false);
-    const [ imgSize, setImgSize] = useState(0)
-    const { city } = useContext(SidebarContext);
+    const [imgSize, setImgSize] = useState(0)
+    const {city} = useContext(SidebarContext);
     const contacts = useMemo(() => Service.getContacts(), []);
     const currentContact = contacts.filter((v: IContact) => v.city.includes(city || ''))[0].phone;
     const currentContactRaw = currentContact.replace(/\(|\)|-/g, '');
@@ -31,7 +31,7 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
         setMax(window.innerWidth)
     }, [])
 
-    
+
     /*useEffect(() => {
         if(max > 1100){
              getWhite(imgSize)
@@ -104,7 +104,8 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
 
     return (
         <>
-            <Layout title="Главная" right={right} count={coun} description="АйКиСистем - клуб единоборств, с новым подходом к восточным боевым искусствам. Наши воспитанники получают необходимую базу по таким направлениям, как: айкидо, карате и джиу-джитсу. Такой подход помогает совмещать спортивные и прикладные направления. Мы находимся в Санкт-Петербурге, Перми, Ижевске и Каменке.">
+            <Layout title="Главная" right={right} count={coun}
+                    description="АйКиСистем - клуб единоборств, с новым подходом к восточным боевым искусствам. Наши воспитанники получают необходимую базу по таким направлениям, как: айкидо, карате и джиу-джитсу. Такой подход помогает совмещать спортивные и прикладные направления. Мы находимся в Санкт-Петербурге, Перми, Ижевске и Каменке.">
                 <article className={styles.first}>
                     <div className={styles.box}>
                         <div className={styles.title}>
@@ -115,12 +116,13 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                                 и откройте новые грани своего потенциала!
                             </h6>
                             <div>
-                                <Subtract text='Групповые и индивидуальные занятия' />
-                                <Subtract text='Детские и взрослые группы' />
+                                <Subtract text='Групповые и индивидуальные занятия'/>
+                                <Subtract text='Детские и взрослые группы'/>
                             </div>
                             <button onClick={() => {
                                 setToggleModal(true);
-                            }}>Записаться на пробное занятие</button>
+                            }}>Записаться на пробное занятие
+                            </button>
                         </div>
 
                     </div>
@@ -130,33 +132,36 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                         width={955}
                         height={794}
                         alt='Бросок коше наге'
-                        className={styles.back} 
-                        onLoad={(e) => setImgSize((e.target as HTMLImageElement).width)} /> 
-                        
+                        className={styles.back}
+                        onLoad={(e) => setImgSize((e.target as HTMLImageElement).width)}/>
+
                 </article>
                 <article className={styles.programms}>
                     <h2>Дисциплины</h2>
                     <div className={styles.name}>
                         {progs.length ? (max > 600 ? progs.map(
-                            prog => <Programms key={prog.id} name={prog.name} id={prog.id} />
+                            prog => <Programms key={prog.id} name={prog.name} id={prog.id}/>
                         ) : (
-                            <ProgrammsMob progs={progs} />
+                            <ProgrammsMob progs={progs}/>
                         )) : (
                             <div>Not found</div>
                         )}
                     </div>
                     <div className={styles.box}>
                         {progs.length ? progs.map(
-                            prog => <Box key={prog.id} prog={prog} />
-                        ) :
+                                prog => <Box key={prog.id} prog={prog}/>
+                            ) :
                             <div>Not found</div>
                         }
                     </div>
                     <div className={styles.line}></div>
                     <p className={styles.text}>
-                        Для детей мы предлагаем занятия, специально адаптированные под их возраст и физическую подготовку.
-                        В процессе тренировок они научатся основам единоборств, развивая свою координацию движений, гибкость и
-                        выносливость. Кроме того, тренировки помогают развить концентрацию, самодисциплину и уверенность в себе.
+                        Для детей мы предлагаем занятия, специально адаптированные под их возраст и физическую
+                        подготовку.
+                        В процессе тренировок они научатся основам единоборств, развивая свою координацию движений,
+                        гибкость и
+                        выносливость. Кроме того, тренировки помогают развить концентрацию, самодисциплину и уверенность
+                        в себе.
                     </p>
                 </article>
                 <article className={styles.history}>
@@ -170,31 +175,31 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                     <div className={styles.cont}>
 
                         {masters.length ? (max > 1200 ? masters.map(
-                            master => <Card key={master.id} master={master} />
-                        ) : (max > 1000 ? (
-                            <>
-                                <span className={styles.arrow} onClick={() => getBack(3)}><Back /></span>
-                                <Card key={masters[count].id} master={masters[count]} />
-                                <Card key={masters[count + 1].id} master={masters[count + 1]} />
-                                <Card key={masters[count + 2].id} master={masters[count + 2]} />
-                                <span className={styles.arrow} onClick={() => getBack(3)}><Next /></span>
-                            </>
-                        ) : (max > 700 ? (
-                            <>
-                                <span className={styles.arrow} onClick={() => getBack(2)}><Back /></span>
-                                <Card key={masters[count].id} master={masters[count]} />
-                                <Card key={masters[count + 1].id} master={masters[count + 1]} />
-                                <span className={styles.arrow} onClick={() => getNext(2)}><Next /></span>
-                            </>
-                        ) : (
-                            <>
-                                <span className={styles.arrow} onClick={() => getBack(1)}><Back /></span>
-                                <Card key={masters[count].id} master={masters[count]} />
-                                <span className={styles.arrow} onClick={() => getNext(1)}><Next /></span>
-                            </>
-                        )
-                        )
-                        )) :
+                                master => <Card key={master.id} master={master}/>
+                            ) : (max > 1000 ? (
+                                    <>
+                                        <span className={styles.arrow} onClick={() => getBack(3)}><Back/></span>
+                                        <Card key={masters[count].id} master={masters[count]}/>
+                                        <Card key={masters[count + 1].id} master={masters[count + 1]}/>
+                                        <Card key={masters[count + 2].id} master={masters[count + 2]}/>
+                                        <span className={styles.arrow} onClick={() => getBack(3)}><Next/></span>
+                                    </>
+                                ) : (max > 700 ? (
+                                        <>
+                                            <span className={styles.arrow} onClick={() => getBack(2)}><Back/></span>
+                                            <Card key={masters[count].id} master={masters[count]}/>
+                                            <Card key={masters[count + 1].id} master={masters[count + 1]}/>
+                                            <span className={styles.arrow} onClick={() => getNext(2)}><Next/></span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <span className={styles.arrow} onClick={() => getBack(1)}><Back/></span>
+                                            <Card key={masters[count].id} master={masters[count]}/>
+                                            <span className={styles.arrow} onClick={() => getNext(1)}><Next/></span>
+                                        </>
+                                    )
+                                )
+                            )) :
                             <div>Not found</div>
                         }
 
@@ -204,8 +209,8 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                         опытом тренерской деятельности. Имеют педагогическое и спортивное образование.
                         Постоянно совершенствуются в области спорта, методической работы и восстановительной
                         физкультуры.
-                        <br />
-                        <br />
+                        <br/>
+                        <br/>
                         В нашем клубе под руководством профессиональных инструкторов, каждый найдет
                         свой путь развития
                         и самосовершенствования.
@@ -214,12 +219,12 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                 <article className={styles.halls} id="halls">
                     <h2>НАШИ ЗАЛЫ</h2>
                     {halls.length ? (
-                        <Halls halls={halls} />
+                        <Halls halls={halls}/>
                     ) : (
                         <div>Not found</div>
                     )}
                 </article>
-            </Layout >
+            </Layout>
             <Modal toggle={toggleModal} setToggle={setToggleModal}>
                 <Modal.Header>
                     <h3 className="modal-container modal-header-css">Свяжитесь с нами</h3>
@@ -227,8 +232,8 @@ const Home: FC<IData> = ({ progs, masters, halls }) => {
                 <Modal.Body>
                     <div className={styles.modalBody}>
                         <p>Город: {city}</p>
-                        <p >Телефон: <a href={`tel:${currentContactRaw}`}>{currentContact}</a></p>
-                        <p style={{"marginTop":"10px"}}>Мессенджеры: </p>
+                        <p>Телефон: <a href={`tel:${currentContactRaw}`}>{currentContact}</a></p>
+                        <p style={{"marginTop": "10px"}}>Мессенджеры: </p>
                         <p className={styles.icon}>
                             <a className={styles.iconLink} href={`https://t.me/${currentContactRaw}`}><Image
                                 width={30}

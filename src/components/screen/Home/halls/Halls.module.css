@@ -52,10 +52,7 @@
     color: var(--blue);
 }
 
-.map img {
-    width: 100vw;
-    height: auto;
-}
+
 
 .metka {
     position: relative;
@@ -65,17 +62,11 @@
     display: block;
 }
 
-.card {
-    background-color: #4E4E4E;
-    height: auto;
-    display: none;
-    z-index: 1;
-    max-width: 330px;
-}
+
 
 .text {
-    padding: 20px;
-    color: white;
+    padding: 0 5px;
+    /*color: white;*/
     line-height: 18.3px;
 }
 
@@ -112,4 +103,26 @@
     .city[open]{
         margin-bottom: 100px;
     }
+}
+/*.map img {*/
+/*    width: 100vw;*/
+/*    height: auto;*/
+/*}*/
+
+/*.card {*/
+/*    */
+/*    height: auto;*/
+/*    display: none;*/
+/*    z-index: 1;*/
+/*    max-width: 330px;*/
+/*}*/
+
+.box > .map {
+    width: 100vw;
+    height: 500px;
+}
+.card {
+    display: block;
+    /*background-color: #4E4E4E;*/
+    max-width: 330px;
 }

@@ -1,10 +1,10 @@
-import { IHalls, ICity, IMap } from "@/interfaces/halls.interfaces";
-import { FC, useContext } from "react";
-import Map from "./Map";
-import { useSidebarContext } from "@/components/layout/sideBarCtx";
-import styles from './Halls.module.css'
-import Link from "next/link";
+import { FC } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { IHalls, ICity } from "@/interfaces/halls.interfaces";
+import { useSidebarContext } from "@/components/layout/sideBarCtx";
+import Map from "./Map";
+import styles from './Halls.module.css'
 
 const Halls: FC<IHalls> = ({ halls }) => {
   console.log(halls);
