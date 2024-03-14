@@ -104,6 +104,16 @@
         margin-bottom: 100px;
     }
 }
+
+@media (min-width: 400px) {
+    .card {
+        max-width: 330px;
+    }
+    .card img {
+        width: 330px;
+        height: 180px;
+    }
+}
 /*.map img {*/
 /*    width: 100vw;*/
 /*    height: auto;*/
@@ -125,4 +135,13 @@
     display: block;
     /*background-color: #4E4E4E;*/
     max-width: 330px;
+}
+
+.card {
+    display: block;
+    max-width: 180px;
+}
+.card img {
+    width: 180px;
+    height: 100px;
 }
